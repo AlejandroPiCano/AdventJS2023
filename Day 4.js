@@ -1,8 +1,7 @@
 function decode(message) {
     let result = "";
     let i = 0;
-     
-    // for(let i=0; i< message.length; i++)
+        
     while( i< message.length)
      {
       let letter = message[i];
@@ -25,12 +24,9 @@ function decode(message) {
              let indexOfCloseOutter = message.indexOf(")", indexOfCloseInner+1);
              let lastPart = message.substr(indexOfCloseInner+1, indexOfCloseOutter - indexOfCloseInner - 1 );
              
-             if(lastPart.indexOf("(") > -1)
-             {
+             if(lastPart.indexOf("(") > -1)             
                lastPart = reverse(lastPart);
-               //lastPart = lastPart.replaceAll(")", "");              
-             }
-
+             
              result += reverse( firstPart + reverse(middlePart) +  lastPart );
              
              i= indexOfCloseOutter+1;          
@@ -61,8 +57,7 @@ function decode(message) {
      
      return result;
    }
-   
-   console.log("eee");
+     
    
    const a = decode('hola (odnum)')
    console.log(a) // hola mundo
