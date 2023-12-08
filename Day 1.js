@@ -24,17 +24,14 @@ console.log(firstRepeatedId3) // 5
 */
 
 function findFirstRepeated(gifts) {
-    // Code here
-    var temp = [];
-    
-    for(var gift of gifts) {
-   
-    if (temp.indexOf(gift) > -1)
-     return gift;
-     
-     temp.push(gift);
-   }
-  
+    let temp = [];
+
+    for (let gift of gifts) {
+        if (temp.indexOf(gift) > -1)
+            return gift;
+
+        temp.push(gift);
+    }
+
     return -1
-  }
-  
+}
