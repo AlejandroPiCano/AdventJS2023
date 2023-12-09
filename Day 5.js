@@ -39,35 +39,26 @@ Los elfos se inspiraron en este reto de Code Wars.
  */
 
 function cyberReindeer(road, time) {
-    function setAt(text, character, position) {
-        let first = text.substr(0, position);
-        let last = text.substr(position + 1, text.length - 1 - position);
-        return first + character + last;
-    }
-
     if (time == 0)
-        return []
+        return [];
 
     let result = [];
     result.push(road);
-
-    let previous = ".";
-    let position = 1;
-
+    let previous = ".",
+        position = 1;
     for (let i = 1; i < time; i++) {
         if (i == 5)
             road = road.replaceAll("|", "*");
-
         if (road[position] != "|") {
             let current = road[position];
-            road = setAt(road, "S", position);
-            road = setAt(road, previous, position - 1);
+            let fp = road.substr(0, position - 1);
+            let sp = road.substr(position + 1, road.length - 1 - position);
+            road = fp + previous + "S" + sp
             previous = current;
             position++;
         }
         result.push(road);
     }
-
     return result;
 }
 
