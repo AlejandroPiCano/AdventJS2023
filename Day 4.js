@@ -32,7 +32,6 @@ function decode(message) {
     let result = "";
     let i = 0;
 
-    // for(let i=0; i< message.length; i++)
     while (i < message.length) {
         let letter = message[i];
 
